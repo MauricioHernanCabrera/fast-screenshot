@@ -1,7 +1,6 @@
 describe("Main", () => {
   it("take screenshot", () => {
     const BASE_URL = "https://smartescrow.eu";
-
     const pages = [
       {
         name: "public_index",
@@ -88,7 +87,6 @@ describe("Main", () => {
         url: "/they_trust_us",
       },
     ];
-
     const breakpoints = [
       {
         breakpoint: "xs",
@@ -119,9 +117,9 @@ describe("Main", () => {
         width: 1600,
       },
     ];
-
     pages.forEach(({ name, url }, indexPage) => {
       cy.visit(`${BASE_URL}${url}`);
+
       breakpoints.forEach(({ breakpoint, width, height }, indexBreakpoint) => {
         cy.viewport(width, height ? height : 800);
         cy.screenshot(
